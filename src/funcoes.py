@@ -171,24 +171,116 @@ def calcular_valor_compra_paraguai():
 # senior R$ 6000,00
 
 
-def exercicio_aluno() -> str:
-      nome : str = input("Digite o nome do aluno: ").strip()
-      return nome
-
-def solicitar_priemira_nota() -> float:
-    nota1 : float = input("Digite a priemira nota")
-    return nota1
+def solicitar_nome_aluno() -> str:
+    nome = input("Digite o nome do aluno: ")
+    return nome
 
 
-def solicitar_segunda_nota() -> float:
-    nota2 : float = input("Digite a segunda nota")
-    return nota2
+def solicitar_nota1() -> float:
+    nota = float(input("Digite a primeira nota: "))
+    return nota
 
 
-def solicitar_terceira_nota() -> float:
-    nota3 : float = input("Digite a terceira nota")
-    return nota3
+def solicitar_nota2() -> float:
+    nota = float(input("Digite a segunda nota: "))
+    return nota
 
+
+def solicitar_nota3() -> float:
+    nota = float(input("Digite a terceira nota: "))
+    return nota
+
+
+def calcular_media(
+        nota1: float, nota2: float, nota3: float
+) -> float:
+    media = (nota1 + nota2 + nota3) / 3
+    return media
+
+
+def validar_situacao_aluno(media: float) -> str:
+    if media >= 7:
+        return "Aprovado"
+    else:
+        return "Reprovado"
+
+
+def solicitar_idade_aluno() -> int:
+    idade = int(input("Digite a idade do aluno: "))
+    return idade
+
+def solicitar_peso_aluno() ->float:
+    peso = float(input("Digite o peso do aluno: "))
+    return peso
+
+def solicitar_altura_aluno() -> float:
+    altura = float(input("Digite a altura do aluno: "))
+    return altura
+
+def calcular_imc(peso_aluno: float, altura_aluno: float) -> float:
+    imc = peso_aluno / (altura_aluno * altura_aluno)
+    return imc
+
+
+def validar_geracao(idade_aluno: int) -> str:
+    ano_nascimento = idade_aluno - 2025
+    if ano_nascimento >= 1946 and ano_nascimento <= 1964:
+        return "Baby Boomers"
+    elif ano_nascimento >= 1965 and ano_nascimento <= 1980:
+        return "Geração X"
+    elif ano_nascimento >= 1981 and ano_nascimento <= 1996:
+        return "Millennials"
+    elif ano_nascimento >= 1997 and ano_nascimento <= 2012:
+        return "Geração Z"
+    elif ano_nascimento >= 2013:
+        return "Geração Alpha"
+    else:
+        return "Geração Indefinida"
+
+
+def solicitar_cargo() -> str:
+    print(" Estagiário, Junior, Pleno ou Senior")
+    cargo = input("Digite o cargo: ")
+    return cargo
+
+
+def validar_salario_cargo(cargo_aluno: str) -> float:
+    if cargo_aluno.replace("á" , "a").strip == "estagiario":
+        return 850.00
+    elif cargo_aluno.strip == "junior":
+        return 1800.00
+    elif cargo_aluno.strip == "pleno":
+        return 4000.00
+    elif cargo_aluno.strip == "senior":
+        return 6000.00
+
+
+def exercicio_aluno ():
+    nome_aluno: str = solicitar_nome_aluno()
+    nota1: float = solicitar_nota1()
+    nota2: float = solicitar_nota2()
+    nota3: float = solicitar_nota3()
+    media: float = calcular_media(nota1, nota2, nota3)
+    situacao: str = validar_situacao_aluno(media)
+    idade_aluno: int = solicitar_idade_aluno()
+    peso_aluno: float = solicitar_peso_aluno()
+    altura_aluno: float = solicitar_altura_aluno()
+    imc_aluno: float = calcular_imc(peso_aluno, altura_aluno)
+    geracao_aluno: str = validar_geracao(idade_aluno)
+    cargo_aluno: str = solicitar_cargo()
+    salario_cargo: float = validar_salario_cargo(cargo_aluno)
+
+    print(f"""
+Nome do aluno: {nome_aluno}
+Media do aluno: {media:.2f}
+Situação: {situacao}
+Idade: {idade_aluno}
+Peso: {peso_aluno}
+Altura: {altura_aluno}
+IMC: {imc_aluno}
+Geração: {geracao_aluno}
+Cargo: {cargo_aluno}
+Salário: {salario_cargo}""")
 
 
 
