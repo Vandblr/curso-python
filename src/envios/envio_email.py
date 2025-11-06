@@ -1,9 +1,9 @@
 from dotenv import load_dotenv
 from os import getenv
 
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 import smtplib
-from email.mime.text import MIMEtext
-from email.mime.multipart import MINEmultipart
 
 
 load_dotenv()
