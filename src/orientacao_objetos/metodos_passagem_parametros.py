@@ -88,10 +88,8 @@ def exercicio_player():
     wudseven7 = Player(
         nick="Wudseven7",
         classe="Atirador",
-        lane="Bot",
-        elo="Mestre",
-        maestria=7,
-        main="Ashe"
+        elo="Mestre"
+        
 
     )
 
@@ -160,7 +158,7 @@ def exercicio_02():
 
 exercicio_02()
 
-print("---------------------------------------------------------------------------")
+print("-----------------------------------------------------------------------")
 
 
 class Carro:
