@@ -8,6 +8,7 @@ from src import dicionarios
 from src.orientacao_objetos.classes import exercicio_marca
 from src.orientacao_objetos.classes import cadastrar_animal, mostrar_animal
 from src.orientacao_objetos.construtores import exemplo_construtor_passagem
+from src.orientacao_objetos.metodos_passagem_parametros import 
 
 
 def main():
@@ -18,7 +19,9 @@ def main():
  #exercicio_marca()
  #animal = cadastrar_animal()
  #mostrar_animal(animal)
- exemplo_construtor_passagem()
+ #exemplo_construtor_passagem()
+ exercicio_player()
+
  
 
 if __name__ == "__main__":
